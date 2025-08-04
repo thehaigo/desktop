@@ -74,7 +74,6 @@ defmodule Desktop.MixProject do
     desktop = [
       {:ex_doc, "~> 0.25", only: :dev, runtime: false},
       {:oncrash, "~> 0.1"},
-      {:debouncer, "~> 0.1"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
 
