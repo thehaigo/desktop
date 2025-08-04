@@ -114,15 +114,6 @@ defmodule Desktop.Env do
 
   @impl true
   def handle_info({:reopen_app, []}, state = %Env{windows: windows}) do
-    # Handling MacOS event when the app icon is clicked again
-    case windows do
-      [window | _] ->
-        # Avoiding constant reopen loops
-        Debouncer.immediate2({Desktop, :reopen}, fn -> Desktop.Window.show(window) end, 500)
-
-      [] ->
-        :nothing
-    end
 
     {:noreply, state}
   end
